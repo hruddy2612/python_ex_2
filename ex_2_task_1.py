@@ -61,6 +61,13 @@ def is_valid_email_address(s):
     #I have watched additional youtube videos and I don't understand it. I will try to set up a meeting with you Monday. 
     #I also looked through your solutions and I don't follow them. 
 
+    for each email in the list: #This is not correct code, but I am not sure how to write this
+        if there are no errors
+        print ("ok, seems legit")
+        else
+        print ("error code, with error code message")
+
+
 
     
     
