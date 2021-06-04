@@ -49,9 +49,18 @@ def is_valid_email_address(s):
 
     
     #how many characters in B (after the @ but before the '.') I don't know how to get B out of the string.
+    B = s.split (".")
     if len(B) <2 or len(B) >8:
         print ("error 2")
     else print ("ok")
+
+    #is C one of the correct endings?
+
+    # I don't know how to check if the email ends in comm, edu, org, gov
+    # I also do not understand how return function works. I have looked through lecture notes/videos and
+    #I have watched additional youtube videos and I don't understand it. I will try to set up a meeting with you Monday. 
+    #I also looked through your solutions and I don't follow them. 
+
 
     
     
