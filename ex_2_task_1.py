@@ -35,8 +35,27 @@
 # results1.txt
 
 def is_valid_email_address(s):
+    s = "hruddy@iastate.edu" #define what email s is
+
+    is_valid_email_address (s)
+
+    #how many characters in A (characters before the @)
+    A = s.split("@")
+   
+    if len(A) < 3 or len(A) >16: # A needs to be within 3-16 characters, if outside the range, an error occurs
+        print ("error 1")
+    else:
+        print ("ok") #the character amount is ok 
+
     
-    # your code here
+    #how many characters in B (after the @ but before the '.') I don't know how to get B out of the string.
+    if len(B) <2 or len(B) >8:
+        print ("error 2")
+    else print ("ok")
+
+    
+    
+
 
     
 
