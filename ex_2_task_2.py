@@ -36,7 +36,7 @@ gave_up = False
 attempts_left = 3
 
 # your code - start
-
+#I don't understand what I'm supposed to be doing with this. I also don't have working code from the first task. 
 
 # your code - end
 if not gave_up:
