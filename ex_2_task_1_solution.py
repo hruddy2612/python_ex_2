@@ -31,3 +31,28 @@ def is_valid_email_address(s):
         return 7, "past-dot part invalid, must be from: com, edu, org, gov"
 
     return None, "Seems legit"
+# This if ensures that the following is NOT run if this file was imported as a module (which we'll do next!)
+if __name__ == "__main__":
+
+    # tests, including edge cases (incomplete? add more!)
+    email_list = ["charding@iastate.edu", 
+        "chris.edu",
+        "chris@edu",
+        "@bla.edu",
+        "throatwobblermangrove@mpfc.org", 
+        "chris@X.com",
+        "chris.harding@iastate.edu",
+        "chris@pymart.biz",
+        "chris@letsgo!.org",
+        "chris@megasavings.org",
+        "tc@tank.com",
+        ]
+    # validate each email from the list
+    for e in email_list:
+        r, s = is_valid_email_address(e) 
+        if r == None:
+            print(e, s) # OK
+        else:
+            print(f"{e} - error: {s}, error code: {r}") # Error
+
+        
