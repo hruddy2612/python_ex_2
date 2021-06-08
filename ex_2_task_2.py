@@ -27,43 +27,46 @@
 # Again, manually copy/paste the console output in a text file (results2.txt)
 
 
-
 # import your function from the previous .py file as a module (you can abbreviate it)
 # use ex_2_task_2 here instead once your function works!
-
 def is_valid_email_address(s):
-    s = "hruddy@iastate.edu" 
 
-    is_valid_email_address (s)
-
+#make sure there is exactly one @
+    if not s.count("@") == 1:
+        return 2, "you need exactly one @"
+    
+   
     #how many characters in A (characters before the @)
     A = s.split("@")
    
-    if len(A) < 3 or len(A) >16: # A needs to be within 3-16 characters, if outside the range, an error occurs
-        print ("error 1")
+    if len(A[0]) < 3 or len(A[0]) > 16: # A needs to be within 3-16 characters, if outside the range, an error occurs
+        return  1, "must be 3-16 characters"  # returns error code, error message
+     
+    
+    
+    #how many characters in B (after the @ but before the '.') 
+    B = A[1].split (".")
+    if len(B[0]) < 2 or len(B[0]) > 8: # spaces around operators: len(B) < 2 or len(B) > 8:
+        return 4, "must contain between 2 and 8 characters" # returns error code, error message
+    
+    #checking for correct email address ending for C
+    if not B[1] in ["com", "edu", "org", "gov"]: 
+        return 3, "must contain com, edu, org, gov"
+
+  
     else:
-        print ("ok") #the character amount is ok 
+        return None, "email is ok"
+'''
+# check email string and print result of check (when returning 1 thing!)
+email = "hruddy@iastate.eu"
 
-    
-    #how many characters in B (after the @ but before the '.') I don't know how to get B out of the string.
-    B = s.split (".")
-    if len(B) <2 or len(B) >8:
-        print ("error 2")
-    else print ("ok")
 
-    #is C one of the correct endings?
-
-    # I don't know how to check if the email ends in comm, edu, org, gov
-    # I also do not understand how return function works. I have looked through lecture notes/videos and
-    #I have watched additional youtube videos and I don't understand it. I will try to set up a meeting with you Monday. 
-    #I also looked through your solutions and I don't follow them. 
-
-    for each email: #This is not correct code, but I am not sure how to write this
-        if there are no errors
-        print ("ok, seems legit")
-        else
-        print ("error code, with error code message")
-    
+err, res = is_valid_email_address(email) #(when returning 2 things!)
+if err != None: # so err must be an int error code!
+    print("Error:", err, res)
+else: # err must be None, i.e. email was OK
+    print(email, "is ok!")
+'''
 
 # This if ensures that the following is NOT run if this file was imported as a module (which we'll do next!)
 if __name__ == "__main__":
@@ -71,7 +74,6 @@ if __name__ == "__main__":
     # tests, including edge cases (incomplete? add more!)
     email_list = ["charding@iastate.edu", 
         "chris.edu",
-        "chris@edu",
         "@bla.edu",
         "throatwobblermangrove@mpfc.org", 
         "chris@X.com",
@@ -95,7 +97,15 @@ gave_up = False
 attempts_left = 3
 
 # your code - start
-#I don't understand what I'm supposed to be doing with this. I also don't have working code from the first task. 
+ 
+if r == None: #email is valid
+    print(e,"is valid")
+
+# attempts need to count down somehow, I am not sure how to make that happen
+
+elif attempts_left == 0 #if attempts reach zero, user has to give up
+    print(" No attempts left, email is invalid")
+ 
 
 # your code - end
 if not gave_up:
