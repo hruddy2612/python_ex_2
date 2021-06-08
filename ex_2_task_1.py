@@ -35,9 +35,6 @@
 # results1.txt
 
 def is_valid_email_address(s):
-    s = "hruddy@iastate.edu" #define what email s is
-
-    is_valid_email_address (s)
 
     #how many characters in A (characters before the @)
     A = s.split("@")
